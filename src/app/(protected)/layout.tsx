@@ -1,29 +1,22 @@
-import AuthButton from "@/components/auth/AuthButton"
-
-import { redirect } from "next/navigation"
-import { getServerSession } from "../api/auth/[...nextauth]/route"
+import NavBar from "@/components/common/nav/NavBar"
+import { Separator } from "@/components/ui/separator"
 
 // Layout for all protected routes
 export default async function ProtectedLayout({
     children
-} : {
+}: {
     children: React.ReactNode
 }) {
 
-    const session = await getServerSession()
-
-    if(!session){
-        redirect('/signin')
-    }
-
-    return(
-        <main className="flex flex-col items-center justify-center min-h-screen">
-            <div className="flex flex-row space-x-2">
-                <p>{`Hi ${session?.user?.first_name}!`}</p>
-                <AuthButton/>
+    return (
+        <main className="flex flex-col min-h-screen">
+            <NavBar />
+            <Separator />
+            <br />
+            <div className='px-8 py-2'>
+                {children}
             </div>
-            <br/>
-            {children}
+
         </main>
     )
 }

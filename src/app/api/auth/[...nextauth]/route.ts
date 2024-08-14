@@ -1,7 +1,7 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
-import { fetchUser, googleSignIn, signIn } from "@/lib/external-api/backendAuthService";
+import { fetchUser, googleSignIn, signIn } from "@/lib/external-api/backend-services/auth.service";
 import { getServerSession as getServerSessionNextAuth} from 'next-auth'
 
 export const authOptions: NextAuthOptions = {
@@ -50,7 +50,6 @@ export const authOptions: NextAuthOptions = {
             return token
         },
         async session({ session, token }) {
-            console.log("Session token:", token)
             
             // Check if session and token has first_name (i.e. from database)
             if(!session.user.first_name && !token.user.first_name && token.email){
@@ -101,8 +100,8 @@ export const authOptions: NextAuthOptions = {
         },
     },
     pages: {
-        signIn: "/signin",
-        signOut: "/signout"
+        signIn: "/auth/signin",
+        signOut: "/auth/signout"
     }
 }
 

@@ -3,7 +3,7 @@
  */
 
 import RegisterRequest from "@/types/auth/RegisterRequest";
-import axiosInstance, { BackendError } from "./axiosInstance";
+import axiosInstance, { BackendError } from "../axiosInstance";
 
 export interface SignInPayload {
     email: string

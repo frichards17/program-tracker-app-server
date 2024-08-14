@@ -24,7 +24,7 @@ import { Input } from "@/components/ui/input";
 
 import { useFormState } from "react-dom";
 
-import { signUpAction } from "@/app/(auth)/actions/auth-actions";
+import { signUpAction } from "@/app/auth/actions/actions";
 
 import { FormErrors } from "./FormError";
 import { Button } from "../ui/button";

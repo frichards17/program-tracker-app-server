@@ -2,7 +2,7 @@
 
 type FormErrorsProps = {
     errors: string[],
-    className?: string // Make className optional
+    className?: string
 };
 
 export function FormErrors({ 

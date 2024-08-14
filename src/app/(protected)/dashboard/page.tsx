@@ -2,6 +2,9 @@ import React from 'react'
 
 export default function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <div>
+      <h1 className="font-extrabold text-4xl">Dashboard</h1>
+      
+    </div>
   )
 }

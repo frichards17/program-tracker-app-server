@@ -15,11 +15,9 @@ import { Input } from "@/components/ui/input";
 import { EMAIL, PASSWORD, SIGNIN } from "@/constants/Auth";
 import { Button } from "../ui/button";
 import SignInWithGoogle from "../auth/SignInWithGoogle";
-import { FormEvent, useState } from "react";
-import { signIn } from "next-auth/react";
 import { FormErrors } from "./FormError";
 import { useFormState } from "react-dom";
-import { signInAction } from "@/app/(auth)/actions/auth-actions";
+import { signInAction } from "@/app/auth/actions/actions";
 import { redirect } from "next/navigation";
 
 const INITIAL_STATE = {
@@ -32,7 +30,7 @@ export function SignInForm() {
   const [formState, formAction] = useFormState(signInAction, INITIAL_STATE)
 
   if(formState.message === "success"){
-    redirect('/')
+    redirect('/dashboard')
   }
 
   return (

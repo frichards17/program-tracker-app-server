@@ -1,4 +1,4 @@
-import { signUp } from "@/lib/external-api/backendAuthService"
+import { signUp } from "@/lib/external-api/backend-services/auth.service"
 import RegisterRequest from "@/types/auth/RegisterRequest"
 import { isErrorResponse } from "@/types/ErrorResponse"
 
