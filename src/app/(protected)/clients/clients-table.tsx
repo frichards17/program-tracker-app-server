@@ -5,34 +5,34 @@ import { columns } from './columns'
 import { User } from 'next-auth'
 import { DataTable } from '@/components/ui/data-table'
 
-const UserTable = () => {
+const ClientsTable = () => {
 
-    const getUsers = async (): Promise<User[]> => {
-        const response = await fetch('/api/users')
+    const getClients = async (): Promise<User[]> => {
+        const response = await fetch('/api/clients')
         const users: User[] = await response.json()
         return users
-      }
+    }
 
-    const { 
-        isPending, 
-        isError, 
-        data, 
+    const {
+        isPending,
+        isError,
+        data,
         error
     } = useQuery({
-        queryKey: ['users'],
-        queryFn: getUsers,
-      })
+        queryKey: ['clients'],
+        queryFn: getClients,
+    })
 
-    if(isPending){
+    if (isPending) {
         return <span>Loading...</span>
     }
 
-    if(isError){
+    if (isError) {
         return <span>Error: {error.message}</span>
     }
 
     return <DataTable columns={columns} data={data} />
-    
+
 }
 
-export default UserTable
+export default ClientsTable

@@ -2,7 +2,7 @@ import NextAuth, { NextAuthOptions } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
 import { fetchUser, googleSignIn, signIn } from "@/lib/external-api/backend-services/auth.service";
-import { getServerSession as getServerSessionNextAuth} from 'next-auth'
+import { getServerSession } from 'next-auth'
 
 export const authOptions: NextAuthOptions = {
     session: {
@@ -105,8 +105,8 @@ export const authOptions: NextAuthOptions = {
     }
 }
 
-export function getServerSession(){
-    return getServerSessionNextAuth(authOptions)
+export function getServerSessionWithOpts(){
+    return getServerSession(authOptions)
 } 
 
 const handler = NextAuth(authOptions)
