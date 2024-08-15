@@ -1,8 +1,10 @@
 "use client"
+
 import { useQuery } from '@tanstack/react-query'
-import React from 'react'
-import DataTable from './dataTable'
 import { User } from 'next-auth'
+
+import { DataTable } from '@/components/ui/data-table'
+import UserTable from './user-table'
 
 export default function Users() {
 
@@ -21,7 +23,7 @@ export default function Users() {
     <div>
       <h1 className="font-extrabold text-4xl">Users</h1>
       <br />
-      <DataTable queryResult={result} />
+      <UserTable userQuery={result} />
     </div>
   )
 }
