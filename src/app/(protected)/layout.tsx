@@ -12,8 +12,7 @@ export default async function ProtectedLayout({
         <main className="flex flex-col min-h-screen">
             <NavBar />
             <Separator />
-            <br />
-            <div className='px-8 py-2'>
+            <div className='p-8'>
                 {children}
             </div>
 

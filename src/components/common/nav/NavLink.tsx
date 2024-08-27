@@ -12,12 +12,12 @@ export default function NavLink({
     currentPath: string
 }) {
 
-  const active = currentPath === href
+  const active = currentPath.startsWith(href)
 
   return (
     <NavigationMenuItem>
           <Link href={href} legacyBehavior passHref>
-              <NavigationMenuLink className={`group inline-flex h-10 w-max items-center justify-center px-4 py-2 text-sm transition hover:text-foreground hover:font-bold hover:scale-105 ${active ? "text-foreground font-bold" : "text-muted-foreground font-medium"}`}>
+              <NavigationMenuLink className={`group inline-flex h-10 w-max items-center justify-center px-4 py-2 text-sm transition font-bold hover:text-foreground ${active ? "text-foreground" : "text-muted-foreground"}`}>
                   {text}
               </NavigationMenuLink>
           </Link>

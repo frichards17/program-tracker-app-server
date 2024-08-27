@@ -10,10 +10,6 @@ export function hasClients(role: string): boolean {
     return hasTrainerFeatures.includes(role)
 }
 
-export function hasProgramming(role: string): boolean {
-    return hasTrainerFeatures.includes(role)
-}
-
 export function hasUsers(role: string): boolean {
     return role === Roles.ADMIN
 }

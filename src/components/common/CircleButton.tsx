@@ -10,7 +10,7 @@ export default function CircleButton({
   children = null
 } : CircleButtonProps) {
   return (
-    <span onClick={onClick} className='rounded-full w-12 h-12 bg-secondary items-center justify-center inline-flex cursor-pointer transition hover:scale-105'>
+    <span onClick={onClick} className='rounded-full w-12 h-12 bg-secondary items-center justify-center inline-flex cursor-pointer transition dark:hover:brightness-125 hover:brightness-90'>
       {children}
     </span>
   )

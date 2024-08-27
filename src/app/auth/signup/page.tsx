@@ -1,4 +1,4 @@
-import { RegisterForm } from "@/components/forms/RegisterForm";
+import { RegisterForm } from "@/components/forms/register-form";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 

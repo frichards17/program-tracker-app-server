@@ -6,7 +6,7 @@ import { signOut, useSession } from 'next-auth/react'
 import { usePathname } from 'next/navigation'
 import { ExitIcon, PersonIcon } from '@radix-ui/react-icons'
 import { NavigationMenu, NavigationMenuList } from '../../ui/navigation-menu'
-import { hasClients, hasProgramming, hasUsers } from '@/constants/Roles'
+import { hasClients, hasUsers } from '@/constants/roles'
 import NavLink from './NavLink'
 import ThemeToggle from '../ThemeToggle'
 import CircleButton from '../CircleButton'
@@ -27,14 +27,13 @@ export default function NavBar() {
 
 
     return (
-        <div className="flex flex-row justify-between items-center w-full px-8 py-4">
+        <div className="flex flex-row justify-between items-center w-full px-8 py-4 bg-card">
             <div className="flex flex-row items-center space-x-4">
                 <h1 className="font-extrabold text-5xl">PT</h1>
                 <NavigationMenu className="w-full">
                     <NavigationMenuList>
                         <NavLink href='/dashboard' text='Dashboard' currentPath={path} />
                         {hasClients(role) ? <NavLink href='/clients' text='Clients' currentPath={path} /> : null}
-                        {hasProgramming(role) ? <NavLink href='/programming' text='Programming' currentPath={path} /> : null}
                         {hasUsers(role) ? <NavLink href='/users' text='Users' currentPath={path} /> : null}
 
                     </NavigationMenuList>
@@ -44,7 +43,7 @@ export default function NavBar() {
             <ThemeToggle />
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                    <Avatar className="w-12 h-12 overflow-hidden rounded-full items-center justify-center inline-flex align-middle transition hover:scale-105">
+                    <Avatar className="w-12 h-12 overflow-hidden rounded-full items-center justify-center inline-flex align-middle transition">
                         <AvatarImage src={session.user.image ?? undefined} />
                         <AvatarFallback>
                             <CircleButton onClick={()=>null}>

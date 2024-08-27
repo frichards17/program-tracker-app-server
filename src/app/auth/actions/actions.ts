@@ -12,7 +12,8 @@ import {
     Validation,
     CONFIRM_PASSWORD,
     SIGNUP
-} from "@/constants/Auth"
+} from "@/constants/auth"
+import { capitalise } from "@/lib/utils";
 
 import { signIn } from "next-auth/react";
 
@@ -122,8 +123,8 @@ export async function signUpAction(prevState: any, formData: FormData) {
         body: JSON.stringify({
             email: validatedData.data[EMAIL],
             password: validatedData.data[PASSWORD],
-            first_name: validatedData.data[FIRST_NAME],
-            last_name: validatedData.data[LAST_NAME] 
+            first_name: capitalise(validatedData.data[FIRST_NAME]),
+            last_name: capitalise(validatedData.data[LAST_NAME]) 
         })
     })
 
