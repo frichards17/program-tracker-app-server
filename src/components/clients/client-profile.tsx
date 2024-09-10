@@ -1,4 +1,5 @@
 import React from 'react'
+import PageTitle from '../common/page-title'
 
 const ClientProfile = ({
     user_name,
@@ -11,7 +12,7 @@ const ClientProfile = ({
 }) => {
   return (
     <div className='space-y-4'>
-      <h1 className="font-extrabold text-4xl">{user_name}</h1>
+      <PageTitle title={user_name} />
       <span className="text-md text-muted-foreground">{user_email}</span>
       {children}
     </div>

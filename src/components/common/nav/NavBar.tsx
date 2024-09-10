@@ -6,7 +6,7 @@ import { signOut, useSession } from 'next-auth/react'
 import { usePathname } from 'next/navigation'
 import { ExitIcon, PersonIcon } from '@radix-ui/react-icons'
 import { NavigationMenu, NavigationMenuList } from '../../ui/navigation-menu'
-import { hasClients, hasUsers } from '@/constants/roles'
+import { hasClients, hasExercises, hasUsers } from '@/constants/roles'
 import NavLink from './NavLink'
 import ThemeToggle from '../ThemeToggle'
 import CircleButton from '../CircleButton'
@@ -35,7 +35,7 @@ export default function NavBar() {
                         <NavLink href='/dashboard' text='Dashboard' currentPath={path} />
                         {hasClients(role) ? <NavLink href='/clients' text='Clients' currentPath={path} /> : null}
                         {hasUsers(role) ? <NavLink href='/users' text='Users' currentPath={path} /> : null}
-
+                        {hasExercises(role) ? <NavLink href='/exercises' text='Exercises' currentPath={path} /> : null}
                     </NavigationMenuList>
                 </NavigationMenu>
             </div>

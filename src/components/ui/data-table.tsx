@@ -4,7 +4,6 @@ import {
   ColumnDef,
   flexRender,
   getCoreRowModel,
-  Row,
   useReactTable,
 } from "@tanstack/react-table"
 
@@ -41,8 +40,11 @@ export function DataTable<TData, TValue>({
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id} className="hover:bg-card">
               {headerGroup.headers.map((header) => {
+
+                const width = 'w-2'//`w-[${header.getSize()}px]`
+
                 return (
-                  <TableHead key={header.id}>
+                  <TableHead className={width} key={header.id}>
                     {header.isPlaceholder
                       ? null
                       : flexRender(
@@ -62,10 +64,10 @@ export function DataTable<TData, TValue>({
                 key={row.id}
                 data-state={row.getIsSelected() && "selected"}
                 onClick={()=> onClickRow && onClickRow(row.original)}
-                className={onClickRow ? 'cursor-pointer rounded-xl' : 'cursor-default'}
+                className={onClickRow ? 'group cursor-pointer rounded-xl' : 'group cursor-default'}
               >
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id}>
+                  <TableCell key={cell.id} className='w-min'>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}

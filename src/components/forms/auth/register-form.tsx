@@ -27,8 +27,8 @@ import { useFormState } from "react-dom";
 import { signUpAction } from "@/app/auth/actions/actions";
 
 import { FormErrors } from "./form-error";
-import { Button } from "../ui/button";
-import SignInWithGoogle from "../auth/SignInWithGoogle";
+import { Button } from "@/components/ui/button";
+import SignInWithGoogle from "@/components/auth/SignInWithGoogle";
 
 // Initial form state
 const INITIAL_STATE = {

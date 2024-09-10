@@ -1,4 +1,4 @@
-import { SignInForm } from '@/components/forms/sign-in-form'
+import { SignInForm } from '@/components/forms/auth/sign-in-form'
 import { getServerSession } from 'next-auth'
 import { redirect } from 'next/navigation'
 

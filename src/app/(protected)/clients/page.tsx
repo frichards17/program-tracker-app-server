@@ -1,11 +1,12 @@
 import React from 'react'
 import ClientsTable from './clients-table'
+import PageTitle from '@/components/common/page-title'
 
 export default function Clients() {
 
   return (
     <div>
-      <h1 className="font-extrabold text-4xl">Clients</h1>
+      <PageTitle title="Clients" />
       <br/>
       <ClientsTable />
     </div>

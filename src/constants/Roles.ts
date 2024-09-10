@@ -14,3 +14,7 @@ export function hasUsers(role: string): boolean {
     return role === Roles.ADMIN
 }
 
+export function hasExercises(role: string): boolean {
+    return role === Roles.ADMIN
+}
+

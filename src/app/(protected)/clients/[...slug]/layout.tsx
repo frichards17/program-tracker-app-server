@@ -1,6 +1,7 @@
 "use client"
 
 import ClientProfile from "@/components/clients/client-profile"
+import LoadingIndicator from "@/components/common/loading-indicator"
 import { useQuery } from "@tanstack/react-query"
 import { User } from "next-auth"
 
@@ -9,10 +10,10 @@ export default function ClientLayout(
     {
         params,
         children
-      }: {
+    }: {
         params: { slug: string[] }
         children: React.ReactNode
-      }
+    }
 ) {
 
     const user_id = params.slug?.[0]
@@ -42,7 +43,7 @@ export default function ClientLayout(
     })
 
     if (isPending) {
-        return <span>Loading...</span>
+        return <LoadingIndicator />
     }
 
     if (isError) {

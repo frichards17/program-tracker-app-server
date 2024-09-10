@@ -1,6 +1,7 @@
 "use client"
 import CurrentProgram from "@/components/clients/current-program"
 import PastPrograms from "@/components/clients/past-programs"
+import LoadingIndicator from "@/components/common/loading-indicator"
 import CreateProgram from "@/components/forms/program/create-program"
 import { useQuery } from "@tanstack/react-query"
 import { User } from "next-auth"
@@ -35,7 +36,7 @@ export default function Page({ params }: { params: { slug: string[] } }) {
     })
 
     if (isPending) {
-        return <span>Loading...</span>
+        return <LoadingIndicator />
     }
 
     if (isError) {

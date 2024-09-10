@@ -9,5 +9,6 @@ export const columns: ColumnDef<User>[] = [
   {
     accessorKey: "email",
     header: "Email",
+    size: 20
   }
 ]

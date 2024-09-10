@@ -6,6 +6,8 @@ import { useQuery } from '@tanstack/react-query'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card'
 import { Separator } from '../ui/separator'
 import { formatDate } from '@/lib/utils'
+import ProgramSessions from './program-sessions'
+import LoadingIndicator from '../common/loading-indicator'
 
 const NoPrograms = ({
     user_id
@@ -57,7 +59,7 @@ const CurrentProgram = ({
     })
 
     if (isPending) {
-        return <span>Loading...</span>
+        return <LoadingIndicator />
     }
 
     if (isError) {
@@ -77,6 +79,7 @@ const CurrentProgram = ({
                 </CardHeader>
                 <CardContent className="min-h-80 space-y-4">
                     Sessions
+                    <ProgramSessions program_id={program.program_id}/>
                 </CardContent>
             </Card>
         )

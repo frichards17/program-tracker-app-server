@@ -13,8 +13,8 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { EMAIL, PASSWORD, SIGNIN } from "@/constants/auth";
-import { Button } from "../ui/button";
-import SignInWithGoogle from "../auth/SignInWithGoogle";
+import { Button } from "@/components/ui/button";
+import SignInWithGoogle from "@/components/auth/SignInWithGoogle";
 import { FormErrors } from "./form-error";
 import { useFormState } from "react-dom";
 import { signInAction } from "@/app/auth/actions/actions";

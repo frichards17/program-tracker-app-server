@@ -4,6 +4,7 @@ import { useQuery, UseQueryResult } from '@tanstack/react-query'
 import { columns } from './columns'
 import { User } from 'next-auth'
 import { DataTable } from '@/components/ui/data-table'
+import LoadingIndicator from '@/components/common/loading-indicator'
 
 const UserTable = () => {
 
@@ -24,7 +25,7 @@ const UserTable = () => {
       })
 
     if(isPending){
-        return <span>Loading...</span>
+        return <LoadingIndicator />
     }
 
     if(isError){

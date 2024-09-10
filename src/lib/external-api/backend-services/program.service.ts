@@ -1,9 +1,14 @@
+
 import axiosInstance from "../axiosInstance"
+import { Session } from "./session.service"
+import { User } from "./user.service"
 
 export interface Program {
     program_id: number
     program_name: string
     start_date: Date
+    client: User
+    sessions: Session[]
 }
 
 export const getProgram = async (id: number): Promise<Program> => {

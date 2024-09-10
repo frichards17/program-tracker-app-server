@@ -5,6 +5,7 @@ import { columns } from './columns'
 import { User } from 'next-auth'
 import { DataTable } from '@/components/ui/data-table'
 import { useRouter } from 'next/navigation'
+import LoadingIndicator from '@/components/common/loading-indicator'
 
 const ClientsTable = () => {
 
@@ -32,7 +33,7 @@ const ClientsTable = () => {
     })
 
     if (isPending) {
-        return <span>Loading...</span>
+        return <LoadingIndicator />
     }
 
     if (isError) {
